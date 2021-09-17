@@ -1,0 +1,50 @@
+{% extends 'snippets/base.html' %}
+{% load static %}
+{% block contents %}
+<section id="jumbotron">
+  <div class="container-fluid" style="height: 350px;">
+      <div class="position-relative">
+          <div class="position-absolute top-50 start-50 translate-middle" style="margin-top: 200px;">
+              <h3 class="text-center text-light">HELLO WORLD!</h3>
+              <h5 class="text-white text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, amet!
+              </h5>
+          </div>
+      </div>
+  </div>
+</section>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#8A8A8A" fill-opacity="1" d="M0,32L34.3,58.7C68.6,85,137,139,206,138.7C274.3,139,343,85,411,90.7C480,96,549,160,617,176C685.7,192,754,160,823,138.7C891.4,117,960,107,1029,133.3C1097.1,160,1166,224,1234,208C1302.9,192,1371,96,1406,48L1440,0L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="text-center">Product</h2>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col-md-6 mt-5">
+            <h3 class="fs-2">Lorem ipsum dolor sit.</h3>
+            <h6 class="fs-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id repudiandae sequi officiis
+                ipsa, dignissimos eveniet, consequuntur praesentium neque harum accusamus, odit modi delectus atque
+                sapiente sed omnis ducimus eum nam?</h6>
+        </div>
+        <div class="col-md-6" style="width: 400px; height: 500px; background-color: grey;"></div>
+    </div>
+
+    <div class="row justify-content-around mt-5">
+        <div class="col-md-6" style="width: 400px; height: 500px; background-color: grey;"></div>
+        <div class="col-md-6 mt-5">
+            <h3 class="fs-2">Lorem ipsum dolor sit.</h3>
+            <h6 class="fs-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id repudiandae sequi officiis
+                ipsa, dignissimos eveniet, consequuntur praesentium neque harum accusamus, odit modi delectus atque
+                sapiente sed omnis ducimus eum nam?</h6>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock contents %}
+
+{% block footer %}
+  {% include 'snippets/footer.html' %}
+{% endblock footer %}

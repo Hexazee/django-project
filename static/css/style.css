@@ -1,0 +1,10 @@
+body,
+nav,
+footer {
+  background-color: #dee2e6;
+}
+
+section#jumbotron {
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(137, 137, 137));
+  margin-top: 20px;
+}

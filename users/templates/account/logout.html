@@ -1,0 +1,37 @@
+{% extends 'snippets/base.html' %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+
+{% block title %}
+  <title>Logout</title>
+{% endblock title %}
+  
+{% block navbar %}
+  
+{% endblock navbar %}
+  
+
+{% block contents %}
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card w-auto shadow-sm bg-light">
+    <div class="card-body">
+      <h3 class="mb-3">{% trans "Sign Out" %}</h3>
+
+      <p>{% trans 'Apakah kamu yakin ingin Logout? ' %}<strong>{{user.username}}</strong></p>
+
+      <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <button type="submit" class="btn btn-dark w-100 mb-1">{% trans 'Sign Out' %}</button>
+        <a href="{% url 'index' %}" class="btn btn-outline-dark w-100">Kembali</a>
+      </form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

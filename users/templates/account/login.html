@@ -1,0 +1,54 @@
+{% extends "snippets/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block title %}
+  <title>Login</title>
+{% endblock title %}
+  
+{% block contents %}
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card w-auto shadow-sm bg-light">
+    
+    <div class="card-body">
+      <h3 class="card-title text-center mb-3">{% trans "Masuk" %}</h3>
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+       <fieldset class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="primaryAction btn btn-dark w-100 mb-2" type="submit">{% trans "Masuk" %}</button>
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Lupa Password?" %}</a>
+       </fieldset>
+      </form>
+    </div>
+
+    <div class="card-body border-top">
+          {% get_providers as socialaccount_providers %}
+
+        
+          <div class="socialaccount_ballot">
+
+            <h5 class="text-center lead mb-3">Atau</h5>
+
+              {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+
+
+
+          </div>
+
+          {% include "socialaccount/snippets/login_extra.html" %}
+
+          <p>{% blocktrans %}Jika Anda belum membuat akun, silakan
+          <a href="{{ signup_url }}">Daftar</a>{% endblocktrans %}</p>
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
